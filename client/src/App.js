@@ -5,16 +5,7 @@ import Axios from 'axios'
 function App() {
 
   var index = 1;
-
-  // const[movie_name, setMovieName] = useState('');
-  // const[minute_runtime, setReview] = useState('');
   const[movieList, setMovieList] = useState([]);
-  // var movieNameText;
-  // var minuteRuntimeText;
-  // var airDate;
-  // var price;
-  // var dateUpdated;
-  // var dateCreated;
 
 
   useEffect(()=>{
@@ -22,15 +13,6 @@ function App() {
       setMovieList(response.data)
     })
   }, [])
-
-  // const submitReview = () => {
-  //   Axios.post('http://localhost:3001/api/insert', {
-  //     movie_name: movie_name, 
-  //     minute_runtime: minute_runtime,
-  //   }).then(() => {
-  //     alert("successful insert");
-  //   })
-  // };
 
   return <div className="App">
     <h1>Database Form</h1>
@@ -77,15 +59,6 @@ function App() {
     document.getElementById("date modified").innerHTML = selectedMovie.date_modified;
     document.getElementById("date created").innerHTML = selectedMovie.date_created;
   }
-  // function updateMovieName(){
-  //   document.getElementById("movie name").innerHTML = getById(index).movie_name;
-  // }
-  // function updateMinuteRuntime(){
-  //   document.getElementById("minute runtime").innerHTML = getById(index).minute_runtime;
-  // }
-  // function updateAirDate(){
-  //   document.getElementById("air date").innerHTML = getById(index).air_date;
-  // }
 
   function getById(num){
     var response;
